@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState('BRL');
   const [coins, setCoins] = useState([]);
   console.log(coins);
   
@@ -13,6 +13,7 @@ function App() {
 
   const handleSearch = () => {
     const endPoint = search;
+
     const url = `https://api.exchangerate.host/latest?base=${endPoint}`;
 
     let rates;
@@ -53,9 +54,7 @@ function App() {
             coins.map((e, index) => (
               <tr key={index}>
                 <td>
-                  {e[0]}
-                  --
-                  {e[1]}
+                 {e[0]} - {Number(e[1]).toFixed(2)}
                 </td>
               </tr>
             ))
