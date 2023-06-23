@@ -30,40 +30,43 @@ function App() {
   return (
     <div>
       <h1>
-        Casa de Câmbio
+        Casa de <span className='cambio-title'>Câmbio</span>
       </h1>
-      <input
-      placeholder="BRL"
-      className="input"
-      name="text"
-      type="text"
-      onChange={handleChange}
-      />
-      <button
-      onClick={handleSearch}
-      >
-        SEARCH
-      </button>
+      <div className='inputs-container'>
+        <input
+        placeholder="BRL"
+        className="input"
+        name="text"
+        type="text"
+        onChange={handleChange}
+        />
+        <button
+        onClick={handleSearch}
+        >
+          SEARCH
+        </button>
+      </div>
       <h2>
         Valores Referentes a 1 {search}
       </h2>
-      <table>
-        <tbody>
+    
+      
+        <div className='divizinha'>
           {
             coins.length > 0 ?
             coins.map((e, index) => (
-              <tr key={index}>
-                <td>
-                 {e[0]} - {Number(e[1]).toFixed(2)}
-                </td>
-              </tr>
+              
+                <li className='values-area' key={index}>
+                 💲 {e[0]}  <span className='yellow-text'>{Number(e[1]).toFixed(2)}</span>
+                </li>
+              
             ))
             : <span>
               Sua Pesquisa
             </span>
           }
-        </tbody>
-      </table>
+        </div>
+      
     </div>
   )
 }
