@@ -105,3 +105,36 @@ button:hover:before {
   color: yellow;
 }
 
+/* CSS para o iPhone 12 */
+@media (max-width: 390px) and (max-height: 844px) {
+  /* Estilos para o iPhone 12 */
+  #root {
+    padding: 1rem;
+  }
+
+  .inputs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 0.6em 2.3em;
+  }
+
+  .divizinha {
+    flex-direction: wrap;
+    align-items: flex-start;
+  }
+
+  .values-area {
+    width: 40%;
+    margin: 5px;
+  }
+}
